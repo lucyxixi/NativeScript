@@ -11,7 +11,14 @@ import { ItemDetailComponent } from "./item/item-detail.component";
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
 
 // Uncomment and add to NgModule imports  if you need to use the HTTP wrapper
-// import { NativeScriptHttpModule } from "nativescript-angular/http";
+ import { NativeScriptHttpModule } from "nativescript-angular/http";
+
+ import { MenuComponent } from './menu/menu.component';
+
+ import { DishService } from './services/dish.service';
+ import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
+ 
+ import { baseURL } from './shared/baseurl';
 
 @NgModule({
     bootstrap: [
@@ -19,15 +26,20 @@ import { ItemDetailComponent } from "./item/item-detail.component";
     ],
     imports: [
         NativeScriptModule,
-        AppRoutingModule
+        AppRoutingModule,
+        NativeScriptHttpModule
     ],
     declarations: [
         AppComponent,
         ItemsComponent,
-        ItemDetailComponent
+        ItemDetailComponent,
+        MenuComponent
     ],
     providers: [
-        ItemService
+        ItemService,
+        {provide: 'BaseURL', useValue: baseURL},
+        DishService,
+        ProcessHTTPMsgService
     ],
     schemas: [
         NO_ERRORS_SCHEMA
