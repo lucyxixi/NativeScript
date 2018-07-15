@@ -3,9 +3,7 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from "./app.component";
 
-import { ItemService } from "./item/item.service";
-import { ItemsComponent } from "./item/items.component";
-import { ItemDetailComponent } from "./item/item-detail.component";
+import { DishdetailComponent } from './dishdetail/dishdetail.component';
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
@@ -31,12 +29,10 @@ import { ItemDetailComponent } from "./item/item-detail.component";
     ],
     declarations: [
         AppComponent,
-        ItemsComponent,
-        ItemDetailComponent,
-        MenuComponent
+        MenuComponent,
+        DishdetailComponent
     ],
     providers: [
-        ItemService,
         {provide: 'BaseURL', useValue: baseURL},
         DishService,
         ProcessHTTPMsgService
