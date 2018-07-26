@@ -1,0 +1,80 @@
+<ActionBar title="Home" class="action-bar">
+    </ActionBar>
+    <RadSideDrawer #drawerComponent tkToggleNavButton showOverNavigation="true">
+        <ScrollView tkDrawerContent class="sidedrawer-left">
+            <StackLayout horizontalAlign="left">
+                <drawer-content></drawer-content>
+            </StackLayout>
+        </ScrollView>
+        <ScrollView orientation="vertical" tkMainContent class="page">
+            <GridLayout class="m-5" rows="auto auto auto">
+                <StackLayout row="0">
+                    <StackLayout class="p-10 border" *ngIf="dish">
+                        <Image [src]="BaseURL + dish.image"></Image>
+                        <StackLayout>
+                            <Label class="h2" [text]="dish.name"></Label>
+                            <Label class="body" [text]="dish.description" textWrap="true"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                    <ActivityIndicator busy="true" *ngIf="!(dish || dishErrMess)" width="50" height="50" class="activity-indicator"></ActivityIndicator>
+                    <Label *ngIf="dishErrMess" [text]="'Error: ' + dishErrMess"></Label>
+                </StackLayout>
+
+
+
+                <StackLayout class="selected1" row="1">
+                    <StackLayout class="p-10 border" *ngIf="promotion">
+                        <Image [src]="BaseURL + promotion.image"></Image>
+                        <StackLayout>
+                            <Label class="h2" [text]="promotion.name"></Label>
+                            <Label class="body" [text]="promotion.description" textWrap="true"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                    <ActivityIndicator busy="true" *ngIf="!(promotion || promoErrMess)" width="50" height="50" class="activity-indicator"></ActivityIndicator>
+                    <Label *ngIf="promoErrMess" [text]="'Error: ' + promoErrMess"></Label>
+                </StackLayout>
+                <StackLayout class="selected2" row="2">
+                    <StackLayout class="p-10 border" *ngIf="leader">
+                        <Image [src]="BaseURL + leader.image"></Image>
+                        <StackLayout>
+                            <Label class="h2" [text]="leader.name"></Label>
+                            <Label class="h3" [text]="leader.designation"></Label>
+                            <Label class="body" [text]="leader.description" textWrap="true"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                    <ActivityIndicator busy="true" *ngIf="!(leader || leaderErrMess)" width="50" height="50" class="activity-indicator"></ActivityIndicator>
+                    <Label *ngIf="leaderErrMess" [text]="'Error: ' + leaderErrMess"></Label>
+                </StackLayout>
+                <!-- <StackLayout row="3">
+                        <StackLayout >
+                                <Image row="0" col="0"  [src]="BaseURL + dish.image" class="sidedrawer-header-image"></Image>
+                            <StackLayout >
+                                <Label  [text]="123"></Label>
+                                <Label class="body" [text]="dish.description" textWrap="true"></Label>
+                            </StackLayout>
+                        </StackLayout>
+                        <ActivityIndicator busy="true" *ngIf="!(dish || dishErrMess)"  class="selected"></ActivityIndicator>
+                        <Label class="selected" *ngIf="dishErrMess" [text]="'Error: ' + dishErrMess"></Label>
+
+                </StackLayout> -->
+                <!-- <StackLayout class="selected3"  tkMainContent class="page">
+                        <ListView [items]="dishes" class="list-group" *ngIf="dishes">
+                            <ng-template let-dish="item">
+                                <StackLayout orientation="horizontal" class="list-group-item"  >
+                                    <Image row="0" col="0" rowSpan="2" height="108" width="108"  [src]="BaseURL + dish.image" class="selected3" ></Image>
+                                    <GridLayout class="list-group-item" rows="auto *" columns="*">
+                                        <Label row="0" col="0" [text]="dish.name" class="selected3" ></Label>
+                                        <Label row="1" col="0" class="selected3" [text]="dish.description"></Label>   
+                                    </GridLayout>
+                                </StackLayout>
+                            </ng-template>
+                        </ListView>
+                        <ActivityIndicator busy="true"  *ngIf="!(dishes || errMess)" width="50" height="50" class="activity-indicator"></ActivityIndicator>
+                        <Label *ngIf="errMess" [text]="'Error: ' + errMess"></Label>
+                    </StackLayout> -->
+            </GridLayout>
+        </ScrollView>
+    </RadSideDrawer>
+
+
+ 

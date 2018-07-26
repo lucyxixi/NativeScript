@@ -22,4 +22,6 @@ export class DrawerPage implements AfterViewInit {
     protected closerDrawer() {
         this.drawer.closeDrawer();
     }
+
+    
 }

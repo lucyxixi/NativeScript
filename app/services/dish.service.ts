@@ -27,7 +27,7 @@ export class DishService {
 
   getFeaturedDish(): Observable<Dish> {
     return this.http.get(baseURL + 'dishes?featured=true')
-                    .pipe(map(res => { return this.processHTTPMsgService.extractData(res); }),
+                    .pipe(map(res => { return this.processHTTPMsgService.extractData(res)[0]; }),
                     catchError(error => { return this.processHTTPMsgService.handleError(error); }));
   }
 

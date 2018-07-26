@@ -15,10 +15,13 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
  import { MenuComponent } from './menu/menu.component';
 
  import { DishService } from './services/dish.service';
+ import { PromotionService } from './services/promotion.service';
+ import { LeaderService } from './services/leader.service';
  import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
  
  import { baseURL } from './shared/baseurl';
  import { DrawerComponent } from './shared/drawer/drawer.component';
+ import { HomeComponent } from "./home/home.component";
 
 
 @NgModule({
@@ -35,12 +38,15 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
         AppComponent,
         MenuComponent,
         DishdetailComponent,
-        DrawerComponent
+        DrawerComponent,
+        HomeComponent
     ],
     providers: [
         {provide: 'BaseURL', useValue: baseURL},
         DishService,
-        ProcessHTTPMsgService
+        ProcessHTTPMsgService,
+        PromotionService,
+        LeaderService
     ],
     schemas: [
         NO_ERRORS_SCHEMA
