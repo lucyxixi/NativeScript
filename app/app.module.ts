@@ -22,6 +22,8 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
  import { baseURL } from './shared/baseurl';
  import { DrawerComponent } from './shared/drawer/drawer.component';
  import { HomeComponent } from "./home/home.component";
+ import { ContactComponent } from "./contact/contact.component";
+ import { AboutComponent } from "./about/about.component";
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
         MenuComponent,
         DishdetailComponent,
         DrawerComponent,
-        HomeComponent
+        HomeComponent,
+        ContactComponent,
+        AboutComponent
     ],
     providers: [
         {provide: 'BaseURL', useValue: baseURL},
