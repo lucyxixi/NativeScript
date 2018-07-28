@@ -18,6 +18,7 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
  import { DishService } from './services/dish.service';
  import { PromotionService } from './services/promotion.service';
  import { LeaderService } from './services/leader.service';
+ import { FavoriteService } from './services/favorite.service';
  import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
  
  import { baseURL } from './shared/baseurl';
@@ -53,6 +54,7 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
         {provide: 'BaseURL', useValue: baseURL},
         DishService,
         ProcessHTTPMsgService,
+        FavoriteService,
         PromotionService,
         LeaderService
     ],
