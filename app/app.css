@@ -68,3 +68,11 @@ refer to http://docs.nativescript.org/ui/theme.
     background-color: green;
     color: blue;
 }
+
+/* .fa {
+    font-family: FontAwesome, fontawesome-webfont;
+} */
+
+.fa {
+    font-family: FontAwesome, fontawesome-webfont;
+}

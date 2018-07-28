@@ -11,6 +11,7 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
 
 // Uncomment and add to NgModule imports  if you need to use the HTTP wrapper
  import { NativeScriptHttpModule } from "nativescript-angular/http";
+ import { TNSFontIconModule } from 'nativescript-ngx-fonticon';
 
  import { MenuComponent } from './menu/menu.component';
 
@@ -34,7 +35,10 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
         NativeScriptModule,
         AppRoutingModule,
         NativeScriptHttpModule,
-        NativeScriptUISideDrawerModule
+        NativeScriptUISideDrawerModule,
+        TNSFontIconModule.forRoot({
+            'fa': './fonts/font-awesome.min.css'
+        })  
     ],
     declarations: [
         AppComponent,
